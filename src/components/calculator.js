@@ -13,8 +13,7 @@ class Calculator extends React.Component {
     if(this.state.reset)
     this.setState({ans: '', reset: false});
     else {
-      let tempValue = this.state.ans ;
-      this.setState({ans: tempValue +=value});
+      this.setState({ans: this.state.ans +=value});
     }
     switch(value){
       case 'C':
@@ -24,7 +23,7 @@ class Calculator extends React.Component {
         try {
           this.setState({ans: eval(this.state.ans.substring(0,this.state.ans.length-1)), reset: true});
         } catch(err) {
-          //this.setState({ans: 'Invalid input', reset: true});
+          this.setState({ans: 'Invalid input', reset: true});
         }
         break;
       default :
