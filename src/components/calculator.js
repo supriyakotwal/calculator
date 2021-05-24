@@ -24,7 +24,7 @@ class Calculator extends React.Component {
         try {
           this.setState({ans: eval(this.state.ans.substring(0,this.state.ans.length-1)), reset: true});
         } catch(err) {
-          this.setState({ans: 'Invalid input', reset: true});
+          //this.setState({ans: 'Invalid input', reset: true});
         }
         break;
       default :
